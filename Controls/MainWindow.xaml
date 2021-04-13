@@ -1,0 +1,42 @@
+﻿<Window x:Class="Controls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="483" Width="288">
+
+    <StackPanel>
+
+        <Label x:Name="Lbl_Output"
+               Content="Ich bin ein String"
+               Foreground="Red"
+               FontSize="25"
+               HorizontalContentAlignment="Center"
+               BorderBrush="Black"
+               BorderThickness="1"/>
+
+        <TextBlock x:Name="Tbl_Strings"
+                   Text="Ich bin auch ein String"
+                   FontFamily="Comic Sans MS"/>
+
+        <Button x:Name="Btn_KlickMich"
+                Content="Klick Mich"
+                Click="Btn_KlickMich_Click"/>
+
+        <Image x:Name="Img_Show"
+               Source="C:\Users\kh2\Desktop\Material\ppedv.bmp"
+               Height="60"
+               Stretch="Uniform"/>
+
+        <TextBox x:Name="Tbx_Input"
+                 Text="Hello"
+                 Height="60"
+                 AcceptsReturn="True"
+                 AcceptsTab="True"
+                 TextWrapping="WrapWithOverflow"/>
+
+    </StackPanel>
+
+</Window>
