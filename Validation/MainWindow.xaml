@@ -35,6 +35,9 @@
                 </Popup>
             </StackPanel>
         </ControlTemplate>
+
+        <local:IPv4Validation x:Key="ipv4Validation"/>
+
     </Window.Resources>
 
     <Window.DataContext>
@@ -52,7 +55,7 @@
                         <!--ValidationRules definieren, wann eine Eingabe durch den Benutzer eine zulässige Eingabe ist und
                         geben das Ergebnis dieser Prüfung an die GUI zurück. Im False-Fall wird gegebenenfalls ein ErrorTemplate
                         angezeigt. ValidationsRules werden als C#-Klasse abgelegt.-->
-                        <local:IPv4Validation/>
+                        <StaticResource ResourceKey="ipv4Validation"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
