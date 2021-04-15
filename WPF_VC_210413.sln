@@ -11,15 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personendatenbank", "Person
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M03_Container", "Container\M03_Container.csproj", "{FACE4853-B2B6-4690-B04E-1BACC7623B39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M04_EventHandling", "EventHandling\M04_EventHandling.csproj", "{C2DA4B62-8F8A-4BC3-BFFC-AAF0E02DC54C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M04_EventHandling", "EventHandling\M04_EventHandling.csproj", "{C2DA4B62-8F8A-4BC3-BFFC-AAF0E02DC54C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_PropertyBinding", "PropertyBinding\M05_PropertyBinding.csproj", "{8C40640B-521E-4E15-A68D-40AA87BEC8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M05_PropertyBinding", "PropertyBinding\M05_PropertyBinding.csproj", "{8C40640B-521E-4E15-A68D-40AA87BEC8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{6676DADD-F188-4C02-8472-980406E9725B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{6676DADD-F188-4C02-8472-980406E9725B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M06_DataBinding", "DataBinding\M06_DataBinding.csproj", "{A0CF8354-DB83-4B38-BA6D-AF16AEB396B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06_DataBinding", "DataBinding\M06_DataBinding.csproj", "{A0CF8354-DB83-4B38-BA6D-AF16AEB396B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M07_Resources_Styles", "ResourcesStyles\M07_Resources_Styles.csproj", "{10DC362D-A733-477C-9189-10B3E2CAF9C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M07_Resources_Styles", "ResourcesStyles\M07_Resources_Styles.csproj", "{10DC362D-A733-477C-9189-10B3E2CAF9C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates", "Templates\Templates.csproj", "{A7F550B8-4522-42D5-B6D8-5B72DE5DD40A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{10DC362D-A733-477C-9189-10B3E2CAF9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10DC362D-A733-477C-9189-10B3E2CAF9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10DC362D-A733-477C-9189-10B3E2CAF9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F550B8-4522-42D5-B6D8-5B72DE5DD40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F550B8-4522-42D5-B6D8-5B72DE5DD40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F550B8-4522-42D5-B6D8-5B72DE5DD40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F550B8-4522-42D5-B6D8-5B72DE5DD40A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
