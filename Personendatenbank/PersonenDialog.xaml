@@ -85,7 +85,7 @@
                   SelectedValue="{Binding Lieblingsfarbe}"
                   ItemsSource="{Binding Source={StaticResource Odp_ColorsProperties}}"
                   SelectedValuePath="Name">
-            
+
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

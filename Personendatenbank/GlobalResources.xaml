@@ -46,4 +46,14 @@
     </Style>
 
 
+    <DataTemplate x:Key="dtp_Colors">
+        <StackPanel Orientation="Horizontal">
+            <Border BorderBrush="Black" BorderThickness="1" Width="20" Height="20" Margin="5,0">
+                <Rectangle Width="20" Height="20" Fill="{Binding Name}"/>
+            </Border>
+            <TextBlock Text="{Binding Name}"/>
+        </StackPanel>
+    </DataTemplate>
+
+
 </ResourceDictionary>
