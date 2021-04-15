@@ -25,6 +25,7 @@ namespace Templates
         {
             InitializeComponent();
 
+            //Vorbereitung
             Personenliste = new ObservableCollection<Person>()
             {
                 new Person(){Vorname="Rainer", Nachname="Zufall", Alter= 45},
@@ -43,6 +44,7 @@ namespace Templates
 
         private void Btn_Loeschen_Click(object sender, RoutedEventArgs e)
         {
+            //Löschen der Person, welche in dem Button-Tag liegt
             Personenliste.Remove((sender as Button).Tag as Person);
         }
     }

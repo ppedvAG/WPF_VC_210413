@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Templates
 {
+    //Bsp-Klasse
     public class Person
     {
         public string Vorname { get; set; }
