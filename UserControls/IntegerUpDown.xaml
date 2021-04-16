@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:UserControls"
              mc:Ignorable="d"
              x:Name="Uc_IntUpDown">
+    
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button">
