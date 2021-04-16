@@ -5,32 +5,40 @@ using System.Windows.Input;
 
 namespace Commands
 {
-    public class CustomCommand : ICommand
-    {
-        public Action<object> ExecuteMethode { get; set; }
-        public Func<object, bool> CanExecuteMethode { get; set; }
+        //Allgemeine generische Commandklasse, welche individuell befüllt werden kann.
 
-        public CustomCommand(Action<object> exe, Func<object, bool> can = null)
+        //ICommand ermöglicht dieser Klasse, als COmmand verwendet zu werden
+        public class CustomCommand : ICommand
         {
-            ExecuteMethode = exe;
+            //Delegates zum Speichern der Logik
+            public Action<object> ExecuteMethode { get; set; }
+            public Func<object, bool> CanExecuteMethode { get; set; }
 
-            CanExecuteMethode = (can == null) ? (p => true) : can;
-        }
+            //Konstruktor
+            public CustomCommand(Action<object> exe, Func<object, bool> can = null)
+            {
+                ExecuteMethode = exe;
 
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+                CanExecuteMethode = (can == null) ? (p => true) : can;
+            }
 
-        public bool CanExecute(object parameter)
-        {
-            return CanExecuteMethode(parameter);
-        }
+            //Anmeldung des Commands im CommandManager
+            public event EventHandler CanExecuteChanged
+            {
+                add { CommandManager.RequerySuggested += value; }
+                remove { CommandManager.RequerySuggested -= value; }
+            }
 
-        public void Execute(object parameter)
-        {
-            ExecuteMethode(parameter);
+            //Bedingung für die Ausführung
+            public bool CanExecute(object parameter)
+            {
+                return CanExecuteMethode(parameter);
+            }
+
+            //Aktion bei Ausführung
+            public void Execute(object parameter)
+            {
+                ExecuteMethode(parameter);
+            }
         }
     }
-}

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Commands
+namespace AdornerBsp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,22 +24,16 @@ namespace Commands
         {
             InitializeComponent();
 
-            //Initialisierung der Commands
-            CloseCmd = new CloseCommand();
-            OeffnenCmd = new CustomCommand
-                (
-                    //Übergabe der Execute()-Logik
-                    p => (new MainWindow()).Show(),
-                    //Übergabe der CanExecute()-Logik
-                    p => (p as string).Length >= 1
-                );
+            Tbx_Show.Loaded += (s, e) =>
+            {
+                //Diese Methode durchläuft den VisualTree ausgehend von dem eingebenen UIElement nach oben und gibt das
+                //erste AdornerLayer zurück, welches es findet. Die Elemente müssen dafür schon vorhanden sein. Hier
+                //bekommen wir das Layer von der Textbox zurück.
+                AdornerLayer adLayer = AdornerLayer.GetAdornerLayer(Tbx_Show);
 
-            //Setzen des DataContext
-            this.DataContext = this;
+                //Hinzufgen des Adorners zum Layer
+                adLayer.Add(new SimpleCircleAdorner(Tbx_Show));
+            };
         }
-
-        //Commandproperties 
-        public CloseCommand CloseCmd { get; set; }
-        public CustomCommand OeffnenCmd { get; set; }
     }
 }

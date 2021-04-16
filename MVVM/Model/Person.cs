@@ -8,18 +8,26 @@ using System.Windows.Media;
 
 namespace MVVM.Model
 {
+    //Der Model-Teil beinhaltet alle Modelklassen und evtl. Klassen, welche nur mit diesen interagieren.
+    //Keine Model-Klasse darf einen Referenz auf den ViewModel- oder den Model-Teil beinhalten
     public class Person : INotifyPropertyChanged, IDataErrorInfo
     {
+        #region Statische Member
+        //Statische Liste zum Speichern der Personenobjekte
         public static ObservableCollection<Person> Personenliste { get; set; } = new ObservableCollection<Person>();
 
+        //Statische Methode zum Laden der Personenobjekte (ruft StartViewModel auf)
         public static void LadePersonenAusDb()
         {
             Personenliste.Add(new Person() { Vorname = "Rainer", Nachname = "Zufall", Geburtsdatum = new DateTime(1987, 5, 13), Verheiratet = true, Lieblingsfarbe = Colors.DarkSeaGreen, Geschlecht = Gender.Männlich, Kinder = 2 });
             Personenliste.Add(new Person() { Vorname = "Anna", Nachname = "Nass", Geburtsdatum = new DateTime(1974, 11, 29), Verheiratet = false, Lieblingsfarbe = Colors.LightBlue, Geschlecht = Gender.Weiblich, Kinder = 0 });
         }
+        #endregion
 
+        //Durch INotifyPropertyChanged verlangtes Event
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Properties (Setter rufe PropertyChanged-Event zur Information der GUI auf)
         private string vorname;
         public string Vorname { get => vorname; set { vorname = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Vorname))); } }
 
@@ -41,6 +49,7 @@ namespace MVVM.Model
         private int kinder;
         public int Kinder { get => kinder; set { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Kinder))); kinder = value; } }
 
+        //Validierung (vgl. M08_Validierung)
         public string Error => null;
 
         public string this[string columnName]
@@ -77,6 +86,7 @@ namespace MVVM.Model
             }
         }
 
+        //Parameterloser Konstruktor (für Standart-Vorbelegung)
         public Person()
         {
             this.Vorname = String.Empty;
@@ -84,6 +94,7 @@ namespace MVVM.Model
             this.Geburtsdatum = DateTime.Now;
         }
 
+        //Kopierkonstruktor (für 1-zu-1-Kopien)
         public Person(Person altePerson)
         {
             this.Vorname = altePerson.Vorname;
